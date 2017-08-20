@@ -14,7 +14,9 @@ mongoose.Promise = global.Promise
 
 app.use(bodyparser.json())
 
-
+app.get('/', function(req, res, next) {
+  console.log('path /')
+})
 
 app.get('/api', function(req, res, next) {
     User.find({})
