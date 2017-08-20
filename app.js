@@ -3,11 +3,15 @@ const mongoose = require('mongoose')
 const app = express()
 const bodyparser = require('body-parser')
 const User = require('./model')
+const port = process.env.port || 3050
 
 // mongoose.connect('mogodb://localhost/users' )
-mongoose.connect("mongodb://muneeb:muneeb123@ds031877.mlab.com:31877/mlab_practice" )
+mongoose.connect("mongodb://muneeb:muneeb123@ds031877.mlab.com:31877/mlab_practice",{
+    useMongoClient : true
+}
+ )
 
-
+mongoose.Promise = global.Promise
 
 app.use(bodyparser.json())
 
@@ -37,7 +41,7 @@ let name = req.body.name
 
 
 
-app.listen(1000 , ()=>{
-    console.log('server is running on port 1000')
+app.listen(port , ()=>{
+    console.log('server is running on port' , port)
 
 })
