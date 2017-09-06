@@ -1,15 +1,21 @@
-const mongoose = require('mongoose')
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const Schema = mongoose.Schema
-
-
-
-const InfoSchema = new Schema({
-    name : String
+var userSchema = new Schema({
+    name: String,
+    age: Number
 })
 
+var User = mongoose.model('User', userSchema);
+var user1 = new User({
+    name: "Muneeb",
+    age: 19
+})
 
-const User = mongoose.model('userInf' , InfoSchema)
-
-
-module.exports = User
+// user1.save(function (err) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log('meow');
+//     }
+// });
