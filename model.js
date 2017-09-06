@@ -6,16 +6,5 @@ var userSchema = new Schema({
     age: Number
 })
 
-var User = mongoose.model('User', userSchema);
-var user1 = new User({
-    name: "Muneeb",
-    age: 19
-})
-
-// user1.save(function (err) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log('meow');
-//     }
-// });
+var patientData = mongoose.model("Patient", userSchema)
+module.exports = patientData;
