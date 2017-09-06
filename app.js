@@ -31,8 +31,16 @@ app.get('/api', function(req, res, next) {
 
 app.post('/api/addName', function(req, res, next) {
 let name = req.body.name;
-let age = req.body.age;
-patientData.create({name : name, age: age})
+let date = req.body.date;
+let obj = {
+    patient: {
+        name: name,
+        date: date
+    }
+}
+patientData.create(
+ obj
+)
     .then(()=>{
         res.send(name);
     })
