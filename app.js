@@ -18,8 +18,8 @@ mongoose.Promise = global.Promise
 app.use(bodyparser.json())
 
 app.get('/', function(req, res, next) {
-  console.log('path /')
-    res.send('path /')
+  console.log('/ path success')
+    res.send('/ pathe success')
 })
 
 app.get('/api', function(req, res, next) {
@@ -30,19 +30,19 @@ app.get('/api', function(req, res, next) {
 })
 
 app.post('/api/addName', function(req, res, next) {
-let name = req.body.name;
-let date = req.body.date;
-let obj = {
-    patient: {
-        name: name,
-        date: date
-    }
-}
-patientData.create(
- obj
-)
+// let name = req.body;
+// let date = req.
+// // let date = req.body.date;
+// let obj = {
+//     patient: {
+//      name: name,
+//      date: date
+     
+//     }
+// }
+patientData.create(req.body)
     .then(()=>{
-        res.send(name);
+        res.send(date);
     })
 })
 
