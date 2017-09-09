@@ -40,9 +40,10 @@ app.post('/api/addName', function(req, res, next) {
      
 //     }
 // }
-patientData.create()
+patientData.create(req.body)
     .then((data)=>{
-        res.send('success ==>'+ date);
+        console.log(req.body)
+        res.send('success ==>'+ data);
     })
     .catch((err) => {
         console.log(err)
