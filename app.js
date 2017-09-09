@@ -35,14 +35,17 @@ app.post('/api/addName', function(req, res, next) {
 // // let date = req.body.date;
 // let obj = {
 //     patient: {
-//      name: name,
+//      name: name,  
 //      date: date
      
 //     }
 // }
-patientData.create(req.body)
-    .then(()=>{
-        res.send(date);
+patientData.create()
+    .then((data)=>{
+        res.send('success ==>'+ date);
+    })
+    .catch((err) => {
+        console.log(err)
     })
 })
 
