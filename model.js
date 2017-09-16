@@ -10,6 +10,7 @@ var Schema = mongoose.Schema;
 // // description: 'n/a'
 var userSchema = new Schema({
     name: String,
+    date: String,
     desease: String,
     gender: String,
     senLevel: String,
